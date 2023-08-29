@@ -20,9 +20,11 @@ def generatepassword():
         label1=Label(my_page,text="!enter valid length which is greater than or equal to 8",font=('Arial',12),fg="red").pack()
     
 def print_password():
-    print("Password  : ",set_password)
-    my_password.delete(0,END)
-    passwordlength_entry.delete(0,END)
+    my_len=int(passwordlength_entry.get())
+    if my_len>=8:
+        print("Password  : ",set_password)
+        my_password.delete(0,END)
+        passwordlength_entry.delete(0,END)
 
 password_len=Label(my_page,text=" ENTER YOUR PASSWORD LENGTH",fg="blue",bg="pink",font=("Arial",12))
 password_len.pack(padx=50,pady=50)
