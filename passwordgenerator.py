@@ -12,9 +12,12 @@ def generatepassword():
     combination=string.ascii_letters+string.digits
     set_password=" "
     my_len=int(passwordlength_entry.get())
-    for i in range(my_len):
-        set_password=set_password+random.choice(combination)
-    password.set(set_password)
+    if my_len>=8:
+        for i in range(my_len):
+            set_password=set_password+random.choice(combination)
+        password.set(set_password)
+    else:
+        label1=Label(my_page,text="!enter valid length which is greater than or equal to 8",font=('Arial',12),fg='red').pack()
     
 def print_password():
     print("Password  : ",set_password)
